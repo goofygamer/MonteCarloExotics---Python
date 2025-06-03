@@ -27,7 +27,7 @@ class RandomGenerator:
         return self.rng.normal(loc=0.0, scale=1.0, size=size)
     
     def get_uniform(self, low=0.0, high=1.0, size=None):
-                """
+        """
         Generates uniform random variate(s) in [low, high).
         Args:
             low (float): Lower bound (inclusive).
@@ -37,3 +37,12 @@ class RandomGenerator:
             float or np.ndarray: A single uniform variate or an array of them.
         """
         return self.rng.uniform(low=low, high=high, size=size)
+
+# Example usage (optional, for testing this file directly)
+# if __name__ == '__main__':
+#     rng_seeded = RandomGenerator(seed=42)
+#     print("Seeded Normal:", [rng_seeded.get_normal() for _ in range(3)])
+    
+#     rng_unseeded = RandomGenerator()
+#     print("Unseeded Normal:", [rng_unseeded.get_normal() for _ in range(3)])
+#     print("Normal Array:", rng_unseeded.get_normal(size=(2,2)))
